@@ -1,0 +1,1231 @@
+[
+    {
+        "agentType": "prometheus",
+        "help": "Cycles of JVM-threads that are in deadlock waiting to acquire object monitors",
+        "key": "jvm_threads_deadlocked_monitor",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Initial bytes of a given JVM memory pool.",
+        "key": "jvm_memory_pool_bytes_init",
+        "paramDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global bytesReceived",
+        "key": "tomcat_bytesreceived_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "counter"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Number of times configuration have successfully been reloaded.",
+        "key": "jmx_config_reload_success_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global errorCount",
+        "key": "tomcat_errorcount_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet processingTime total",
+        "key": "tomcat_servlet_processingtime_total",
+        "paramDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool pollerThreadCount",
+        "key": "tomcat_threadpool_pollerthreadcount",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Resident memory size in bytes.",
+        "key": "process_resident_memory_bytes",
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Bytes capacity of a given JVM buffer pool.",
+        "key": "jvm_buffer_pool_capacity_bytes",
+        "paramDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Total bytes allocated in a given JVM memory pool. Only updated after GC, not continuously.",
+        "key": "jvm_memory_pool_allocated_bytes_total",
+        "paramDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "counter"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Time spent in a given JVM garbage collector in seconds.",
+        "key": "jvm_gc_collection_seconds",
+        "tagDefine": [
+            {
+                "name": "_key_type",
+                "readOnly": false
+            }
+        ],
+        "unit": "seconds",
+        "data_type": "double",
+        "metric_type": "summary",
+        "paramDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Max bytes of a given JVM memory pool.",
+        "key": "jvm_memory_pool_bytes_max",
+        "paramDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session sessionCounter total",
+        "key": "tomcat_session_sessioncounter_total",
+        "paramDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Non-zero if this scrape failed.",
+        "key": "jmx_scrape_error",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Current count of threads by state",
+        "key": "jvm_threads_state",
+        "paramDefine": [
+            {
+                "default": "WAITING",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "WAITING",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Used bytes of a given JVM memory pool.",
+        "key": "jvm_memory_pool_bytes_used",
+        "paramDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool connectionCount",
+        "key": "tomcat_threadpool_connectioncount",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "JVM version info",
+        "key": "jvm_info",
+        "paramDefine": [
+            {
+                "default": "1.8.0_261-b12",
+                "name": "version",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Oracle Corporation",
+                "name": "vendor",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Java(TM) SE Runtime Environment",
+                "name": "runtime",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "1.8.0_261-b12",
+                "name": "version",
+                "readOnly": false
+            },
+            {
+                "default": "Oracle Corporation",
+                "name": "vendor",
+                "readOnly": false
+            },
+            {
+                "default": "Java(TM) SE Runtime Environment",
+                "name": "runtime",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Total user and system CPU time spent in seconds.",
+        "key": "process_cpu_seconds_total",
+        "unit": "seconds",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session processingTime total",
+        "key": "tomcat_session_processingtime_total",
+        "paramDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Maximum number of open file descriptors.",
+        "key": "process_max_fds",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Time this JMX scrape took, in seconds.",
+        "key": "jmx_scrape_duration_seconds",
+        "unit": "seconds",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Cycles of JVM-threads that are in deadlock waiting to acquire object monitors or ownable synchronizers",
+        "key": "jvm_threads_deadlocked",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Number of times configuration have failed to be reloaded.",
+        "key": "jmx_config_reload_failure_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global processingTime",
+        "key": "tomcat_processingtime_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Used bytes of a given JVM memory area.",
+        "key": "jvm_memory_bytes_used",
+        "paramDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "The number of classes that are currently loaded in the JVM",
+        "key": "jvm_classes_loaded",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Start time of the process since unix epoch in seconds.",
+        "key": "process_start_time_seconds",
+        "unit": "seconds",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Number of open file descriptors.",
+        "key": "process_open_fds",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool currentThreadsBusy",
+        "key": "tomcat_threadpool_currentthreadsbusy",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Virtual memory size in bytes.",
+        "key": "process_virtual_memory_bytes",
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "The total number of classes that have been loaded since the JVM has started execution",
+        "key": "jvm_classes_loaded_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool keepAliveCount",
+        "key": "tomcat_threadpool_keepalivecount",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Current thread count of a JVM",
+        "key": "jvm_threads_current",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session expiredSessions total",
+        "key": "tomcat_session_expiredsessions_total",
+        "paramDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session rejectedSessions total",
+        "key": "tomcat_session_rejectedsessions_total",
+        "paramDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/manager",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "A metric with a constant '1' value labeled with the version of the JMX exporter.",
+        "key": "jmx_exporter_build_info",
+        "paramDefine": [
+            {
+                "default": "0.13.0",
+                "name": "version",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "jmx_prometheus_javaagent",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "0.13.0",
+                "name": "version",
+                "readOnly": false
+            },
+            {
+                "default": "jmx_prometheus_javaagent",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global requestCount",
+        "key": "tomcat_requestcount_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global maxTime",
+        "key": "tomcat_maxtime_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet errorCount total",
+        "key": "tomcat_servlet_errorcount_total",
+        "paramDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Used buffers of a given JVM buffer pool.",
+        "key": "jvm_buffer_pool_used_buffers",
+        "paramDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Committed bytes of a given JVM memory pool.",
+        "key": "jvm_memory_pool_bytes_committed",
+        "paramDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Code Cache",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet maxTime total",
+        "key": "tomcat_servlet_maxtime_total",
+        "paramDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Initial bytes of a given JVM memory area.",
+        "key": "jvm_memory_bytes_init",
+        "paramDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "The total number of classes that have been unloaded since the JVM has started execution",
+        "key": "jvm_classes_unloaded_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool currentThreadCount",
+        "key": "tomcat_threadpool_currentthreadcount",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Committed (bytes) of a given JVM memory area.",
+        "key": "jvm_memory_bytes_committed",
+        "paramDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Daemon thread count of a JVM",
+        "key": "jvm_threads_daemon",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Max (bytes) of a given JVM memory area.",
+        "key": "jvm_memory_bytes_max",
+        "paramDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "heap",
+                "name": "area",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet requestCount total",
+        "key": "tomcat_servlet_requestcount_total",
+        "paramDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/examples",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "stock",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Peak thread count of a JVM",
+        "key": "jvm_threads_peak",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Started thread count of a JVM",
+        "key": "jvm_threads_started_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Used bytes of a given JVM buffer pool.",
+        "key": "jvm_buffer_pool_used_bytes",
+        "paramDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "direct",
+                "name": "pool",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global bytesSent",
+        "key": "tomcat_bytessent_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "counter"
+    }
+]
