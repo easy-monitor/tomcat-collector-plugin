@@ -1,0 +1,105 @@
+[
+    {
+        "_object_id": "_DASHBOARD",
+        "namespace": "resource-monitor.TOMCAT_SERVICE",
+        "name": "Tomcat 实例监控",
+        "panels": [
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_globalrequestprocessor_bytessent\",\"catalina_globalrequestprocessor_bytesreceived\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_globalrequestprocessor_bytessent\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_globalrequestprocessor_bytessent\"]}},{\"name\":\"catalina_globalrequestprocessor_bytesreceived\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_globalrequestprocessor_bytesreceived\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "网络速率",
+                "width": 12,
+                "x": 0,
+                "y": 0
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_globalrequestprocessor_processingtime\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_globalrequestprocessor_processingtime\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_globalrequestprocessor_processingtime\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "处理时间",
+                "width": 12,
+                "x": 0,
+                "y": 8
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_globalrequestprocessor_requestcount\",\"catalina_globalrequestprocessor_errorcount\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_globalrequestprocessor_requestcount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_globalrequestprocessor_requestcount\"]}},{\"name\":\"catalina_globalrequestprocessor_errorcount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_globalrequestprocessor_errorcount\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "请求速率",
+                "width": 12,
+                "x": 12,
+                "y": 0
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_threadpool_maxthreads\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_threadpool_maxthreads\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_maxthreads\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "最大线程数",
+                "width": 12,
+                "x": 12,
+                "y": 8
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_threadpool_currentthreadcount\",\"catalina_threadpool_currentthreadsbusy\",\"catalina_threadpool_connectioncount\",\"catalina_threadpool_keepalivecount\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_threadpool_currentthreadcount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_currentthreadcount\"]}},{\"name\":\"catalina_threadpool_currentthreadsbusy\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_currentthreadsbusy\"]}},{\"name\":\"catalina_threadpool_connectioncount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_connectioncount\"]}},{\"name\":\"catalina_threadpool_keepalivecount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_keepalivecount\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "线程数",
+                "width": 24,
+                "x": 0,
+                "y": 16
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_threadpool_acceptcount\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_threadpool_acceptcount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_acceptcount\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "接收线程数",
+                "width": 12,
+                "x": 0,
+                "y": 24
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"catalina_threadpool_pollerthreadcount\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"catalina_threadpool_pollerthreadcount\",\"function\":{\"expression\":\"avg\",\"args\":[\"catalina_threadpool_pollerthreadcount\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "chart-v2.time-series-chart",
+                "links": "[]",
+                "source": "brick",
+                "title": "轮询线程数",
+                "width": 12,
+                "x": 12,
+                "y": 24
+            }
+        ],
+        "variables": [
+            {
+                "id": "objectId",
+                "multiSelect": false,
+                "name": "模型 ID",
+                "selectorDefaultValue": "TOMCAT_SERVICE",
+                "showSelector": false,
+                "type": "cmdb-model"
+            },
+            {
+                "id": "instanceId",
+                "multiSelect": false,
+                "name": "实例 ID",
+                "selectorObjectId": "TOMCAT_SERVICE",
+                "selectorQuery": "{}",
+                "showSelector": false,
+                "type": "cmdb"
+            }
+        ]
+    }
+]
