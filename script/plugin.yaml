@@ -1,0 +1,11 @@
+agentType: prometheus
+type: exporter
+
+name: tomcat_collector_plugin
+version: 1.0.0
+
+category: WEB框架
+params:
+    - config_file_path
+    - exporter_host
+    - exporter_port

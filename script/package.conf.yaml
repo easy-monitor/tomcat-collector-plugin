@@ -1,0 +1,83 @@
+---
+script_source: easyops
+start_component: ""
+start_component_params: ""
+stop_component: ""
+stop_component_params: ""
+proc_list:
+- proc_name: jmx_prometheus
+  proc_num_min: ~
+  proc_num_max: ~
+  pid_file: ~
+port_list: []
+proc_guard: ""
+port_guard: none
+start_script: |
+  #!/usr/local/easyops/python/bin/python
+  # -*- coding: UTF-8 -*-
+
+  import copy
+  import os
+  import subprocess
+
+
+  def run_command(command, cwd=".", env={}, shell=False, close_fds=True):
+      process = subprocess.Popen(
+          command,
+          cwd=cwd,
+          env=copy.deepcopy(os.environ).update(env),
+          shell=shell,
+          close_fds=close_fds
+      )
+
+      return process.returncode
+
+
+  if __name__ == '__main__':
+      package_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+      argument_map = {
+          '--config-file-path': 'config_file_path',
+          '--exporter-host': 'exporter_host',
+          '--exporter-port': 'exporter_port'
+      }
+
+      arguments = []
+      for argument, env in argument_map.iteritems():
+          env_value = os.environ.get('EASYOPS_COLLECTOR_' + env)
+          if env_value is not None:
+              arguments.append('{} {}'.format(argument, env_value))
+
+      command = 'sh ./script/deploy/start_script.sh {} &'.format(' '.join(arguments))
+      run_command(command, shell=True, cwd=package_path)
+start_script_type: python
+user_pre_check_script: ""
+user_pre_check_script_type: shell
+user_check_script: ""
+user_check_script_type: shell
+stop_script: ""
+stop_script_type: python
+monitor_script: ""
+user: root
+user_defined_global_variables: []
+baseImageId: ""
+install_prescript: ""
+install_postscript: ""
+update_prescript: ""
+update_postscript: ""
+uninstall_prescript: ""
+uninstall_postscript: ""
+rollback_prescript: ""
+rollback_postscript: ""
+install_prescript_type: shell
+install_postscript_type: shell
+update_prescript_type: shell
+update_postscript_type: shell
+uninstall_prescript_type: shell
+uninstall_postscript_type: shell
+rollback_prescript_type: shell
+rollback_postscript_type: shell
+restart_script: ""
+resolve_script: ""
+templates: []
+...
