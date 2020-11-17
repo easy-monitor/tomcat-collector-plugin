@@ -1,0 +1,3 @@
+[submodule "script/supervisor"]
+	path = script/supervisor
+	url = https://github.com/easy-monitor/exporter-supervisor.git

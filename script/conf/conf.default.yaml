@@ -1,0 +1,12 @@
+# exporter进程的keyword，支持"java|xxx|xx"的正则，程序会根据egrep的方式去过滤
+exporter_keyword: "tomcat_exporter"
+
+# exporter启动的端口范围
+port_range: [20000, 60000]
+
+# exporter的启动脚本模板，{xx}的变量将被替换
+start_cmd_template: "bash ./bin/start.sh --host {ip} --port {port} --config-file-path conf/tomcat.yml --exporter-host 0.0.0.0 --exporter-port {exporter_port}"
+
+# 监控实例的过滤条件，只对满足该条件的实例进行守护。语法就是cmdb的search的query条件
+cmdb_query: 
+  isMonitor: true
