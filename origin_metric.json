@@ -1,147 +1,104 @@
 [
     {
         "agentType": "prometheus",
-        "help": "Cycles of JVM-threads that are in deadlock waiting to acquire object monitors",
-        "key": "jvm_threads_deadlocked_monitor",
+        "help": "Tomcat session processingTime total",
+        "key": "tomcat_session_processingtime_total",
+        "paramDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet maxTime total",
+        "key": "tomcat_servlet_maxtime_total",
+        "paramDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "A metric with a constant '1' value labeled with the version of the JMX exporter.",
+        "key": "jmx_exporter_build_info",
+        "paramDefine": [
+            {
+                "default": "0.13.1-SNAPSHOT",
+                "name": "version",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "jmx_prometheus_httpserver",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "0.13.1-SNAPSHOT",
+                "name": "version",
+                "readOnly": false
+            },
+            {
+                "default": "jmx_prometheus_httpserver",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
         "data_type": "double",
         "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Initial bytes of a given JVM memory pool.",
-        "key": "jvm_memory_pool_bytes_init",
-        "paramDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat global bytesReceived",
-        "key": "tomcat_bytesreceived_total",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "counter"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Number of times configuration have successfully been reloaded.",
-        "key": "jmx_config_reload_success_total",
-        "data_type": "double",
-        "metric_type": "counter",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat global errorCount",
-        "key": "tomcat_errorcount_total",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat servlet processingTime total",
-        "key": "tomcat_servlet_processingtime_total",
-        "paramDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
         "unit": ""
     },
     {
@@ -180,190 +137,6 @@
     },
     {
         "agentType": "prometheus",
-        "help": "Resident memory size in bytes.",
-        "key": "process_resident_memory_bytes",
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Bytes capacity of a given JVM buffer pool.",
-        "key": "jvm_buffer_pool_capacity_bytes",
-        "paramDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Total bytes allocated in a given JVM memory pool. Only updated after GC, not continuously.",
-        "key": "jvm_memory_pool_allocated_bytes_total",
-        "paramDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "counter"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Time spent in a given JVM garbage collector in seconds.",
-        "key": "jvm_gc_collection_seconds",
-        "tagDefine": [
-            {
-                "name": "_key_type",
-                "readOnly": false
-            }
-        ],
-        "unit": "seconds",
-        "data_type": "double",
-        "metric_type": "summary",
-        "paramDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Max bytes of a given JVM memory pool.",
-        "key": "jvm_memory_pool_bytes_max",
-        "paramDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat session sessionCounter total",
-        "key": "tomcat_session_sessioncounter_total",
-        "paramDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Non-zero if this scrape failed.",
-        "key": "jmx_scrape_error",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Current count of threads by state",
-        "key": "jvm_threads_state",
-        "paramDefine": [
-            {
-                "default": "WAITING",
-                "name": "state",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "WAITING",
-                "name": "state",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Used bytes of a given JVM memory pool.",
-        "key": "jvm_memory_pool_bytes_used",
-        "paramDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
         "help": "Tomcat threadpool connectionCount",
         "key": "tomcat_threadpool_connectioncount",
         "paramDefine": [
@@ -394,135 +167,6 @@
         ],
         "data_type": "double",
         "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "JVM version info",
-        "key": "jvm_info",
-        "paramDefine": [
-            {
-                "default": "1.8.0_261-b12",
-                "name": "version",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "Oracle Corporation",
-                "name": "vendor",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "Java(TM) SE Runtime Environment",
-                "name": "runtime",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "1.8.0_261-b12",
-                "name": "version",
-                "readOnly": false
-            },
-            {
-                "default": "Oracle Corporation",
-                "name": "vendor",
-                "readOnly": false
-            },
-            {
-                "default": "Java(TM) SE Runtime Environment",
-                "name": "runtime",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Total user and system CPU time spent in seconds.",
-        "key": "process_cpu_seconds_total",
-        "unit": "seconds",
-        "data_type": "double",
-        "metric_type": "counter",
-        "paramDefine": [],
-        "tagDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat session processingTime total",
-        "key": "tomcat_session_processingtime_total",
-        "paramDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Maximum number of open file descriptors.",
-        "key": "process_max_fds",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Time this JMX scrape took, in seconds.",
-        "key": "jmx_scrape_duration_seconds",
-        "unit": "seconds",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Cycles of JVM-threads that are in deadlock waiting to acquire object monitors or ownable synchronizers",
-        "key": "jvm_threads_deadlocked",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Number of times configuration have failed to be reloaded.",
-        "key": "jmx_config_reload_failure_total",
-        "data_type": "double",
-        "metric_type": "counter",
-        "paramDefine": [],
-        "tagDefine": [],
         "unit": ""
     },
     {
@@ -561,466 +205,8 @@
     },
     {
         "agentType": "prometheus",
-        "help": "Used bytes of a given JVM memory area.",
-        "key": "jvm_memory_bytes_used",
-        "paramDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "The number of classes that are currently loaded in the JVM",
-        "key": "jvm_classes_loaded",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Start time of the process since unix epoch in seconds.",
-        "key": "process_start_time_seconds",
-        "unit": "seconds",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Number of open file descriptors.",
-        "key": "process_open_fds",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat threadpool currentThreadsBusy",
-        "key": "tomcat_threadpool_currentthreadsbusy",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Virtual memory size in bytes.",
-        "key": "process_virtual_memory_bytes",
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": []
-    },
-    {
-        "agentType": "prometheus",
-        "help": "The total number of classes that have been loaded since the JVM has started execution",
-        "key": "jvm_classes_loaded_total",
-        "data_type": "double",
-        "metric_type": "counter",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat threadpool keepAliveCount",
-        "key": "tomcat_threadpool_keepalivecount",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Current thread count of a JVM",
-        "key": "jvm_threads_current",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat session expiredSessions total",
-        "key": "tomcat_session_expiredsessions_total",
-        "paramDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat session rejectedSessions total",
-        "key": "tomcat_session_rejectedsessions_total",
-        "paramDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "/manager",
-                "name": "context",
-                "readOnly": false
-            },
-            {
-                "default": "localhost",
-                "name": "host",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "A metric with a constant '1' value labeled with the version of the JMX exporter.",
-        "key": "jmx_exporter_build_info",
-        "paramDefine": [
-            {
-                "default": "0.13.0",
-                "name": "version",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "jmx_prometheus_javaagent",
-                "name": "name",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "0.13.0",
-                "name": "version",
-                "readOnly": false
-            },
-            {
-                "default": "jmx_prometheus_javaagent",
-                "name": "name",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat global requestCount",
-        "key": "tomcat_requestcount_total",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat global maxTime",
-        "key": "tomcat_maxtime_total",
-        "paramDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "8080",
-                "name": "port",
-                "readOnly": false
-            },
-            {
-                "default": "http-nio",
-                "name": "protocol",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat servlet errorCount total",
-        "key": "tomcat_servlet_errorcount_total",
-        "paramDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Used buffers of a given JVM buffer pool.",
-        "key": "jvm_buffer_pool_used_buffers",
-        "paramDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "gauge",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Committed bytes of a given JVM memory pool.",
-        "key": "jvm_memory_pool_bytes_committed",
-        "paramDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "Code Cache",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat servlet maxTime total",
-        "key": "tomcat_servlet_maxtime_total",
-        "paramDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Initial bytes of a given JVM memory area.",
-        "key": "jvm_memory_bytes_init",
-        "paramDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "The total number of classes that have been unloaded since the JVM has started execution",
-        "key": "jvm_classes_unloaded_total",
+        "help": "Number of times configuration have successfully been reloaded.",
+        "key": "jmx_config_reload_success_total",
         "data_type": "double",
         "metric_type": "counter",
         "paramDefine": [],
@@ -1063,139 +249,6 @@
     },
     {
         "agentType": "prometheus",
-        "help": "Committed (bytes) of a given JVM memory area.",
-        "key": "jvm_memory_bytes_committed",
-        "paramDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Daemon thread count of a JVM",
-        "key": "jvm_threads_daemon",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Max (bytes) of a given JVM memory area.",
-        "key": "jvm_memory_bytes_max",
-        "paramDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "heap",
-                "name": "area",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Tomcat servlet requestCount total",
-        "key": "tomcat_servlet_requestcount_total",
-        "paramDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false,
-                "valueType": "string"
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "localhost/examples",
-                "name": "module",
-                "readOnly": false
-            },
-            {
-                "default": "stock",
-                "name": "servlet",
-                "readOnly": false
-            }
-        ],
-        "data_type": "double",
-        "metric_type": "counter",
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Peak thread count of a JVM",
-        "key": "jvm_threads_peak",
-        "data_type": "double",
-        "metric_type": "gauge",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Started thread count of a JVM",
-        "key": "jvm_threads_started_total",
-        "data_type": "double",
-        "metric_type": "counter",
-        "paramDefine": [],
-        "tagDefine": [],
-        "unit": ""
-    },
-    {
-        "agentType": "prometheus",
-        "help": "Used bytes of a given JVM buffer pool.",
-        "key": "jvm_buffer_pool_used_bytes",
-        "paramDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false,
-                "valueType": "string"
-            }
-        ],
-        "tagDefine": [
-            {
-                "default": "direct",
-                "name": "pool",
-                "readOnly": false
-            }
-        ],
-        "unit": "bytes",
-        "data_type": "double",
-        "metric_type": "gauge"
-    },
-    {
-        "agentType": "prometheus",
         "help": "Tomcat global bytesSent",
         "key": "tomcat_bytessent_total",
         "paramDefine": [
@@ -1227,5 +280,3927 @@
         "unit": "bytes",
         "data_type": "double",
         "metric_type": "counter"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Number of times configuration have failed to be reloaded.",
+        "key": "jmx_config_reload_failure_total",
+        "data_type": "double",
+        "metric_type": "counter",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global bytesReceived",
+        "key": "tomcat_bytesreceived_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes",
+        "data_type": "double",
+        "metric_type": "counter"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool currentThreadsBusy",
+        "key": "tomcat_threadpool_currentthreadsbusy",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session expiredSessions total",
+        "key": "tomcat_session_expiredsessions_total",
+        "paramDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Time this JMX scrape took, in seconds.",
+        "key": "jmx_scrape_duration_seconds",
+        "unit": "seconds",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet processingTime total",
+        "key": "tomcat_servlet_processingtime_total",
+        "paramDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global errorCount",
+        "key": "tomcat_errorcount_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global requestCount",
+        "key": "tomcat_requestcount_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Non-zero if this scrape failed.",
+        "key": "jmx_scrape_error",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Number of beans with their matching rule cached",
+        "key": "jmx_scrape_cached_beans",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat global maxTime",
+        "key": "tomcat_maxtime_total",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session sessionCounter total",
+        "key": "tomcat_session_sessioncounter_total",
+        "paramDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet requestCount total",
+        "key": "tomcat_servlet_requestcount_total",
+        "paramDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat threadpool keepAliveCount",
+        "key": "tomcat_threadpool_keepalivecount",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat session rejectedSessions total",
+        "key": "tomcat_session_rejectedsessions_total",
+        "paramDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Tomcat servlet errorCount total",
+        "key": "tomcat_servlet_errorcount_total",
+        "paramDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionUsageThresholdSupported (java.lang<type=MemoryPool, name=Metaspace><>CollectionUsageThresholdSupported)",
+        "key": "java_lang_memorypool_collectionusagethresholdsupported",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><NonHeapMemoryUsage>committed)",
+        "key": "java_lang_memory_nonheapmemoryusage_committed",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "SynchronizerUsageSupported (java.lang<type=Threading><>SynchronizerUsageSupported)",
+        "key": "java_lang_threading_synchronizerusagesupported",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "All Oracle JDBC logging code is controlled by this boolean attribute. If false, no log messages will be produced. If true, log messages will be controlled by java.util.logging Levels and Filters.: oracle.jdbc.driver.OracleDiagnosabilityMBean@3632be31 (com.oracle.jdbc<type=diagnosability, name=java.net.URLClassLoader@123a439b><>LoggingEnabled)",
+        "key": "com_oracle_jdbc_diagnosability_loggingenabled",
+        "paramDefine": [
+            {
+                "default": "java.net.URLClassLoader@123a439b",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "java.net.URLClassLoader@123a439b",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CommittedVirtualMemorySize (java.lang<type=OperatingSystem><>CommittedVirtualMemorySize)",
+        "key": "java_lang_operatingsystem_committedvirtualmemorysize",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><PeakUsage>committed)",
+        "key": "java_lang_memorypool_peakusage_committed",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute numTestsPerEvictionRun (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>numTestsPerEvictionRun)",
+        "key": "catalina_datasource_numtestsperevictionrun",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute maxConnLifetimeMillis (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>maxConnLifetimeMillis)",
+        "key": "catalina_datasource_maxconnlifetimemillis",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><Usage>used)",
+        "key": "java_lang_memorypool_usage_used",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute removeAbandonedOnBorrow (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>removeAbandonedOnBorrow)",
+        "key": "catalina_datasource_removeabandonedonborrow",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadCpuTimeSupported (java.lang<type=Threading><>ThreadCpuTimeSupported)",
+        "key": "java_lang_threading_threadcputimesupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><HeapMemoryUsage>init)",
+        "key": "java_lang_memory_heapmemoryusage_init",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><Usage>max)",
+        "key": "java_lang_memorypool_usage_max",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "SystemCpuLoad (java.lang<type=OperatingSystem><>SystemCpuLoad)",
+        "key": "java_lang_operatingsystem_systemcpuload",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=PS Eden Space><CollectionUsage>max)",
+        "key": "java_lang_memorypool_collectionusage_max",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "LoadedClassCount (java.lang<type=ClassLoading><>LoadedClassCount)",
+        "key": "java_lang_classloading_loadedclasscount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute logAbandoned (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>logAbandoned)",
+        "key": "catalina_datasource_logabandoned",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ProcessCpuLoad (java.lang<type=OperatingSystem><>ProcessCpuLoad)",
+        "key": "java_lang_operatingsystem_processcpuload",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadAllocatedMemoryEnabled (java.lang<type=Threading><>ThreadAllocatedMemoryEnabled)",
+        "key": "java_lang_threading_threadallocatedmemoryenabled",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadAllocatedMemorySupported (java.lang<type=Threading><>ThreadAllocatedMemorySupported)",
+        "key": "java_lang_threading_threadallocatedmemorysupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute testOnCreate (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>testOnCreate)",
+        "key": "catalina_datasource_testoncreate",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><NonHeapMemoryUsage>init)",
+        "key": "java_lang_memory_nonheapmemoryusage_init",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute numActive (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>numActive)",
+        "key": "catalina_datasource_numactive",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute clearStatementPoolOnReturn (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>clearStatementPoolOnReturn)",
+        "key": "catalina_datasource_clearstatementpoolonreturn",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageBeforeGc>init)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusagebeforegc_init",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CurrentThreadUserTime (java.lang<type=Threading><>CurrentThreadUserTime)",
+        "key": "java_lang_threading_currentthreadusertime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionUsageThresholdCount (java.lang<type=MemoryPool, name=PS Eden Space><>CollectionUsageThresholdCount)",
+        "key": "java_lang_memorypool_collectionusagethresholdcount",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageBeforeGc>committed)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusagebeforegc_committed",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute maxWaitMillis (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>maxWaitMillis)",
+        "key": "catalina_datasource_maxwaitmillis",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ProcessCpuTime (java.lang<type=OperatingSystem><>ProcessCpuTime)",
+        "key": "java_lang_operatingsystem_processcputime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><HeapMemoryUsage>used)",
+        "key": "java_lang_memory_heapmemoryusage_used",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute abandonedUsageTracking (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>abandonedUsageTracking)",
+        "key": "catalina_datasource_abandonedusagetracking",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><PeakUsage>max)",
+        "key": "java_lang_memorypool_peakusage_max",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "FreePhysicalMemorySize (java.lang<type=OperatingSystem><>FreePhysicalMemorySize)",
+        "key": "java_lang_operatingsystem_freephysicalmemorysize",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalCapacity (java.nio<type=BufferPool, name=mapped><>TotalCapacity)",
+        "key": "java_nio_bufferpool_totalcapacity",
+        "paramDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><Usage>committed)",
+        "key": "java_lang_memorypool_usage_committed",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageBeforeGc>used)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusagebeforegc_used",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Verbose (java.lang<type=ClassLoading><>Verbose)",
+        "key": "java_lang_classloading_verbose",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute maxTotal (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>maxTotal)",
+        "key": "catalina_datasource_maxtotal",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><Usage>init)",
+        "key": "java_lang_memorypool_usage_init",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Uptime (java.lang<type=Runtime><>Uptime)",
+        "key": "java_lang_runtime_uptime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompositeType for GC info for PS Scavenge (java.lang<type=GarbageCollector, name=PS Scavenge><LastGcInfo>GcThreadCount)",
+        "key": "java_lang_garbagecollector_lastgcinfo_gcthreadcount",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute softMinEvictableIdleTimeMillis (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>softMinEvictableIdleTimeMillis)",
+        "key": "catalina_datasource_softminevictableidletimemillis",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "SystemLoadAverage (java.lang<type=OperatingSystem><>SystemLoadAverage)",
+        "key": "java_lang_operatingsystem_systemloadaverage",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute removeAbandonedOnMaintenance (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>removeAbandonedOnMaintenance)",
+        "key": "catalina_datasource_removeabandonedonmaintenance",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute removeAbandonedTimeout (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>removeAbandonedTimeout)",
+        "key": "catalina_datasource_removeabandonedtimeout",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><NonHeapMemoryUsage>max)",
+        "key": "java_lang_memory_nonheapmemoryusage_max",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "MaxFileDescriptorCount (java.lang<type=OperatingSystem><>MaxFileDescriptorCount)",
+        "key": "java_lang_operatingsystem_maxfiledescriptorcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute initialSize (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>initialSize)",
+        "key": "catalina_datasource_initialsize",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute minIdle (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>minIdle)",
+        "key": "catalina_datasource_minidle",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><HeapMemoryUsage>max)",
+        "key": "java_lang_memory_heapmemoryusage_max",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionTime (java.lang<type=GarbageCollector, name=PS Scavenge><>CollectionTime)",
+        "key": "java_lang_garbagecollector_collectiontime",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompositeType for GC info for PS Scavenge (java.lang<type=GarbageCollector, name=PS Scavenge><LastGcInfo>endTime)",
+        "key": "java_lang_garbagecollector_lastgcinfo_endtime",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute numIdle (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>numIdle)",
+        "key": "catalina_datasource_numidle",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><HeapMemoryUsage>committed)",
+        "key": "java_lang_memory_heapmemoryusage_committed",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalSwapSpaceSize (java.lang<type=OperatingSystem><>TotalSwapSpaceSize)",
+        "key": "java_lang_operatingsystem_totalswapspacesize",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute defaultTransactionIsolation (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>defaultTransactionIsolation)",
+        "key": "catalina_datasource_defaulttransactionisolation",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionUsageThresholdExceeded (java.lang<type=MemoryPool, name=PS Eden Space><>CollectionUsageThresholdExceeded)",
+        "key": "java_lang_memorypool_collectionusagethresholdexceeded",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Valid (java.lang<type=MemoryManager, name=CodeCacheManager><>Valid)",
+        "key": "java_lang_memorymanager_valid",
+        "paramDefine": [
+            {
+                "default": "CodeCacheManager",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "CodeCacheManager",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "MemoryUsed (java.nio<type=BufferPool, name=mapped><>MemoryUsed)",
+        "key": "java_nio_bufferpool_memoryused",
+        "paramDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionCount (java.lang<type=GarbageCollector, name=PS Scavenge><>CollectionCount)",
+        "key": "java_lang_garbagecollector_collectioncount",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=PS Eden Space><CollectionUsage>committed)",
+        "key": "java_lang_memorypool_collectionusage_committed",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute logExpiredConnections (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>logExpiredConnections)",
+        "key": "catalina_datasource_logexpiredconnections",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Valid (java.lang<type=MemoryPool, name=Metaspace><>Valid)",
+        "key": "java_lang_memorypool_valid",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute accessToUnderlyingConnectionAllowed (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>accessToUnderlyingConnectionAllowed)",
+        "key": "catalina_datasource_accesstounderlyingconnectionallowed",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadCpuTimeEnabled (java.lang<type=Threading><>ThreadCpuTimeEnabled)",
+        "key": "java_lang_threading_threadcputimeenabled",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute maxIdle (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>maxIdle)",
+        "key": "catalina_datasource_maxidle",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ObjectPendingFinalizationCount (java.lang<type=Memory><>ObjectPendingFinalizationCount)",
+        "key": "java_lang_memory_objectpendingfinalizationcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "UsageThresholdExceeded (java.lang<type=MemoryPool, name=Metaspace><>UsageThresholdExceeded)",
+        "key": "java_lang_memorypool_usagethresholdexceeded",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Count (java.nio<type=BufferPool, name=mapped><>Count)",
+        "key": "java_nio_bufferpool_count",
+        "paramDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "mapped",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageAfterGc>max)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusageaftergc_max",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute timeBetweenEvictionRunsMillis (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>timeBetweenEvictionRunsMillis)",
+        "key": "catalina_datasource_timebetweenevictionrunsmillis",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "UsageThresholdCount (java.lang<type=MemoryPool, name=Metaspace><>UsageThresholdCount)",
+        "key": "java_lang_memorypool_usagethresholdcount",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "UnloadedClassCount (java.lang<type=ClassLoading><>UnloadedClassCount)",
+        "key": "java_lang_classloading_unloadedclasscount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageAfterGc>used)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusageaftergc_used",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompositeType for GC info for PS Scavenge (java.lang<type=GarbageCollector, name=PS Scavenge><LastGcInfo>startTime)",
+        "key": "java_lang_garbagecollector_lastgcinfo_starttime",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute cacheState (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>cacheState)",
+        "key": "catalina_datasource_cachestate",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalLoadedClassCount (java.lang<type=ClassLoading><>TotalLoadedClassCount)",
+        "key": "java_lang_classloading_totalloadedclasscount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageAfterGc>init)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusageaftergc_init",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute testOnReturn (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>testOnReturn)",
+        "key": "catalina_datasource_testonreturn",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute poolPreparedStatements (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>poolPreparedStatements)",
+        "key": "catalina_datasource_poolpreparedstatements",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute autoCommitOnReturn (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>autoCommitOnReturn)",
+        "key": "catalina_datasource_autocommitonreturn",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute maxOpenPreparedStatements (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>maxOpenPreparedStatements)",
+        "key": "catalina_datasource_maxopenpreparedstatements",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=Memory><NonHeapMemoryUsage>used)",
+        "key": "java_lang_memory_nonheapmemoryusage_used",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalPhysicalMemorySize (java.lang<type=OperatingSystem><>TotalPhysicalMemorySize)",
+        "key": "java_lang_operatingsystem_totalphysicalmemorysize",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute testWhileIdle (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>testWhileIdle)",
+        "key": "catalina_datasource_testwhileidle",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CurrentThreadCpuTime (java.lang<type=Threading><>CurrentThreadCpuTime)",
+        "key": "java_lang_threading_currentthreadcputime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "UsageThreshold (java.lang<type=MemoryPool, name=Metaspace><>UsageThreshold)",
+        "key": "java_lang_memorypool_usagethreshold",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "BootClassPathSupported (java.lang<type=Runtime><>BootClassPathSupported)",
+        "key": "java_lang_runtime_bootclasspathsupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute testOnBorrow (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>testOnBorrow)",
+        "key": "catalina_datasource_testonborrow",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute rollbackOnReturn (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>rollbackOnReturn)",
+        "key": "catalina_datasource_rollbackonreturn",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><PeakUsage>init)",
+        "key": "java_lang_memorypool_peakusage_init",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompositeType for GC info for PS Scavenge (java.lang<type=GarbageCollector, name=PS Scavenge><LastGcInfo>duration)",
+        "key": "java_lang_garbagecollector_lastgcinfo_duration",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadContentionMonitoringSupported (java.lang<type=Threading><>ThreadContentionMonitoringSupported)",
+        "key": "java_lang_threading_threadcontentionmonitoringsupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "OpenFileDescriptorCount (java.lang<type=OperatingSystem><>OpenFileDescriptorCount)",
+        "key": "java_lang_operatingsystem_openfiledescriptorcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageBeforeGc>max)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusagebeforegc_max",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompilationTimeMonitoringSupported (java.lang<type=Compilation><>CompilationTimeMonitoringSupported)",
+        "key": "java_lang_compilation_compilationtimemonitoringsupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute validationQueryTimeout (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>validationQueryTimeout)",
+        "key": "catalina_datasource_validationquerytimeout",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "DaemonThreadCount (java.lang<type=Threading><>DaemonThreadCount)",
+        "key": "java_lang_threading_daemonthreadcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CollectionUsageThreshold (java.lang<type=MemoryPool, name=PS Eden Space><>CollectionUsageThreshold)",
+        "key": "java_lang_memorypool_collectionusagethreshold",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "StartTime (java.lang<type=Runtime><>StartTime)",
+        "key": "java_lang_runtime_starttime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadContentionMonitoringEnabled (java.lang<type=Threading><>ThreadContentionMonitoringEnabled)",
+        "key": "java_lang_threading_threadcontentionmonitoringenabled",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ObjectMonitorUsageSupported (java.lang<type=Threading><>ObjectMonitorUsageSupported)",
+        "key": "java_lang_threading_objectmonitorusagesupported",
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": []
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute enableAutoCommitOnReturn (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>enableAutoCommitOnReturn)",
+        "key": "catalina_datasource_enableautocommitonreturn",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "AvailableProcessors (java.lang<type=OperatingSystem><>AvailableProcessors)",
+        "key": "java_lang_operatingsystem_availableprocessors",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "PeakThreadCount (java.lang<type=Threading><>PeakThreadCount)",
+        "key": "java_lang_threading_peakthreadcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=GarbageCollector, name=PS Scavenge, key=Compressed Class Space><LastGcInfo, memoryUsageAfterGc>committed)",
+        "key": "java_lang_garbagecollector_lastgcinfo_memoryusageaftergc_committed",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            },
+            {
+                "default": "Compressed Class Space",
+                "name": "key",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "ThreadCount (java.lang<type=Threading><>ThreadCount)",
+        "key": "java_lang_threading_threadcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalCompilationTime (java.lang<type=Compilation><>TotalCompilationTime)",
+        "key": "java_lang_compilation_totalcompilationtime",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=Metaspace><PeakUsage>used)",
+        "key": "java_lang_memorypool_peakusage_used",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute lifo (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>lifo)",
+        "key": "catalina_datasource_lifo",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute minEvictableIdleTimeMillis (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>minEvictableIdleTimeMillis)",
+        "key": "catalina_datasource_minevictableidletimemillis",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute closed (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>closed)",
+        "key": "catalina_datasource_closed",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "TotalStartedThreadCount (java.lang<type=Threading><>TotalStartedThreadCount)",
+        "key": "java_lang_threading_totalstartedthreadcount",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CurrentThreadCpuTimeSupported (java.lang<type=Threading><>CurrentThreadCpuTimeSupported)",
+        "key": "java_lang_threading_currentthreadcputimesupported",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Valid (java.lang<type=GarbageCollector, name=PS Scavenge><>Valid)",
+        "key": "java_lang_garbagecollector_valid",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "CompositeType for GC info for PS Scavenge (java.lang<type=GarbageCollector, name=PS Scavenge><LastGcInfo>id)",
+        "key": "java_lang_garbagecollector_lastgcinfo_id",
+        "paramDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Scavenge",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Introspected attribute fastFailValidation (Catalina<type=DataSource, host=localhost, context=/, class=javax.sql.DataSource, name=\"jdbc/MSSQL\"><>fastFailValidation)",
+        "key": "catalina_datasource_fastfailvalidation",
+        "paramDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost",
+                "name": "host",
+                "readOnly": false
+            },
+            {
+                "default": "/",
+                "name": "context",
+                "readOnly": false
+            },
+            {
+                "default": "javax.sql.DataSource",
+                "name": "class",
+                "readOnly": false
+            },
+            {
+                "default": "\\jdbc/MSSQL\\",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=PS Eden Space><CollectionUsage>init)",
+        "key": "java_lang_memorypool_collectionusage_init",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "FreeSwapSpaceSize (java.lang<type=OperatingSystem><>FreeSwapSpaceSize)",
+        "key": "java_lang_operatingsystem_freeswapspacesize",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "Verbose (java.lang<type=Memory><>Verbose)",
+        "key": "java_lang_memory_verbose",
+        "data_type": "double",
+        "metric_type": "gauge",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "help": "java.lang.management.MemoryUsage (java.lang<type=MemoryPool, name=PS Eden Space><CollectionUsage>used)",
+        "key": "java_lang_memorypool_collectionusage_used",
+        "paramDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "PS Eden Space",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
+        "agentType": "prometheus",
+        "help": "UsageThresholdSupported (java.lang<type=MemoryPool, name=Metaspace><>UsageThresholdSupported)",
+        "key": "java_lang_memorypool_usagethresholdsupported",
+        "paramDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "Metaspace",
+                "name": "name",
+                "readOnly": false
+            }
+        ],
+        "unit": "percent(1)",
+        "data_type": "double",
+        "metric_type": "gauge"
     }
 ]
