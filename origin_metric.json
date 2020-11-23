@@ -282,6 +282,41 @@
         "metric_type": "counter"
     },
     {
+        "agentType": "calculated",
+        "help": "Tomcat global bytesSent rate",
+        "key": "tomcat_bytessent_rate",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "expression": "rate(tomcat_bytessent_total[1m])",
+        "unit": "bytes/sec",
+        "data_type": "double",
+        "metric_type": "gauge"
+    },
+    {
         "agentType": "prometheus",
         "help": "Number of times configuration have failed to be reloaded.",
         "key": "jmx_config_reload_failure_total",
@@ -324,6 +359,41 @@
         "unit": "bytes",
         "data_type": "double",
         "metric_type": "counter"
+    },
+    {
+        "agentType": "calculated",
+        "help": "Tomcat global bytesReceived rate",
+        "key": "tomcat_bytesreceived_rate",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "expression": "rate(tomcat_bytesreceived_total[1m])",
+        "unit": "bytes/sec",
+        "data_type": "double",
+        "metric_type": "gauge"
     },
     {
         "agentType": "prometheus",
@@ -438,6 +508,41 @@
         "unit": ""
     },
     {
+        "agentType": "calculated",
+        "help": "Tomcat servlet processingTime rate",
+        "key": "tomcat_servlet_processingtime_rate",
+        "paramDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "localhost/",
+                "name": "module",
+                "readOnly": false
+            },
+            {
+                "default": "CadreRMServlet",
+                "name": "servlet",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "expression": "rate(tomcat_servlet_processingtime_total[1m])",
+        "unit": ""
+    },
+    {
         "agentType": "prometheus",
         "help": "Tomcat global errorCount",
         "key": "tomcat_errorcount_total",
@@ -503,6 +608,41 @@
         ],
         "data_type": "double",
         "metric_type": "counter",
+        "unit": ""
+    },
+    {
+        "agentType": "calculated",
+        "help": "Tomcat global requestCount",
+        "key": "tomcat_requestcount_rate",
+        "paramDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false,
+                "valueType": "string"
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "8080",
+                "name": "port",
+                "readOnly": false
+            },
+            {
+                "default": "http-nio",
+                "name": "protocol",
+                "readOnly": false
+            }
+        ],
+        "data_type": "double",
+        "metric_type": "gauge",
+        "expression": "rate(tomcat_requestcount_total[1m])",
         "unit": ""
     },
     {
