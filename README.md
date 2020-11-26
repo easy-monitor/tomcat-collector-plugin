@@ -70,7 +70,7 @@ $ sh plugin_op.sh install 8888 /data/easyops/monitor_plugin_packages/tomcat-coll
 
 ```sh
 $ cd /data/easyops/monitor_plugin_packages/tomcat-collector-plugin/script
-$ sh deploy/start_script.sh --config-file-path conf/tomcat.yml
+$ sh bin/start.sh --config-file-path conf/tomcat.yml
 ```
 
 注意：该启动脚本默认使用 `java` 命令启动，如果提示 “java 命令未找到”，可以通过在 `PATH` 中加入 Java 安装目录来指定使用的 Java 环境。类似命令如下。
